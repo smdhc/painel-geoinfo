@@ -11,11 +11,6 @@
  */
 
 /*custom for menus:*/
-#menu {
-  vertical-align: top;
-  display: inline-block;
-  width: 20%;
-}
 .filterselect{
   
   font: 12px/1.5 'Roboto Condensed', Verdana, Helvetica, sans-serif;

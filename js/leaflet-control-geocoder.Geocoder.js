@@ -10,8 +10,8 @@ module.exports = {
 			collapsed: true,
 			expand: 'touch', // options: touch, click, anythingelse
 			position: 'topright',
-			placeholder: 'Search...',
-			errorMessage: 'Nothing found.',
+			placeholder: 'Digite o endereço desejado',
+			errorMessage: 'Nenhum local encontrado.',
 			suggestMinLength: 3,
 			suggestTimeout: 250,
 			defaultMarkGeocode: true
@@ -31,15 +31,15 @@ module.exports = {
 		onAdd: function (map) {
 			var className = 'leaflet-control-geocoder',
 			    container = L.DomUtil.create('div', className + ' leaflet-bar'),
-			    icon = L.DomUtil.create('button', className + '-icon', container),
+			    icon = L.DomUtil.create('a', className + '-icon', container),
 			    form = this._form = L.DomUtil.create('div', className + '-form', container),
 			    input;
 
 			this._map = map;
 			this._container = container;
 
-			icon.innerHTML = '&nbsp;';
-			icon.type = 'button';
+			icon.innerHTML = '';
+			icon.type = 'a';
 
 			input = this._input = L.DomUtil.create('input', '', form);
 			input.type = 'text';

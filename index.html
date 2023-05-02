@@ -15,215 +15,8 @@
         <link rel="stylesheet" href="tree/themes/default/style.css" />
         <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
         <link rel="stylesheet" href="scroll/simple-scrollbar.css" />
-        <style>
-            .leaflet-top.leaflet-left {
-                position: absolute;
-                top: 10px;
-            }
-            .leaflet-top.leaflet-right {
-                position: absolute;
-                right: 18%;
-                top: 10px;
-            }
-            #explorador.col0 {
-                height: 70%;
-                width: 17%;
-                position: absolute;
-                z-index: 500;
-                right: 10px;
-                top: 60px;
-                background-color: #ffffffdb;
-                border: groove;
-                border-width: 2px;
-                border-radius: 10px;
-            }
-            #menu.col2.ss-container {
-                height: 20%;
-                width: 17%;
-                position: absolute;
-                z-index: 500;
-                right: 10px;
-                bottom: 12px;
-                background-color: #ffffffdb;
-                border: groove;
-                border-width: 2px;
-                border-radius: 10px;
-            }
-            #grafico.col3.ss-container {
-                height: 33%;
-                width: 15%;
-                position: absolute;
-                z-index: 500;
-                left: 10px;
-                bottom: 12px;
-                background-color: #ffffffdb;
-                border: groove;
-                border-width: 2px;
-                border-radius: 10px;
-            }
-            .jstree-default .tema .jstree-icon:empty {
-                width: 26px;
-                height: 26px;
-                line-height: 26px;
-            }
-            .jstree-default .subtema .jstree-icon:empty {
-                width: 19px;
-                height: 24px;
-                line-height: 19px;
-            }
-            .ss-content {
-                overflow-x: hidden;
-            }
-            a[id^="no_checkbox"] .jstree-checkbox{
-                display: none;
-            }
-            .info {
-                padding: 6px 8px;
-                font: 14px/16px 'Roboto Condensed', Verdana, Helvetica, sans-serif;
-                background: white;
-                background: rgba(255,255,255,0.8);
-                box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                border-radius: 5px;
-            }
-            .info h4 {
-                font: 14px/16px 'Roboto Condensed', Verdana, Helvetica, sans-serif;
-                margin: 0 0 5px;
-                color: #777;
-            }
-            html, body, #map {
-                width: 100%;
-                height: 100%;
-                padding: 0;
-                margin: 0;
-                font-family: 'Roboto Condensed', Verdana, Helvetica, sans-serif;
-            }
-            table.janela th, table.janela td {
-                border-style:solid;
-                border-color: #96D4D4;
-                border-width: 1px;
-            }
-            .noUi-horizontal .noUi-handle { /* Estilo do botão do slider */
-                width: 18px;
-                height: 28px;
-                left: -17px;
-                top: -10px;
-            }
-            .noUi-handle:after, .noUi-handle:before {
-                content: "";
-                display: block;
-                position: absolute;
-                height: 14px;
-                width: 2px;
-                background: #E8E7E6;
-                left: 5px;
-                top: 6px;
-                align-content: center;
-            }
-            .noUi-handle:after {
-                left: 10px;
-            }
-            .noUi-connect.pop {
-                    background: #c55656;
-            }
-            td, span {
-                color: rgb(130, 130, 130);
-            }
-            titulo, b, th {
-                color: rgb(50, 50, 50);
-            }
-            div.cor1{
-                background: #aaaaaa;
-            }
-            div.cor0{
-                background: rgb(56,180,37);
-                background: linear-gradient(90deg, rgb(26, 150, 65) 0%, rgba(255,255,192) 50%, rgb(215, 25, 28) 100%);
-            }
-            .cor00 {
-                background: #3130308a;
-            }
-            div.cor2{
-                background: #f78181;
-            }
-            .slider {
-                font: 12px/1.5 "Roboto Condensed", Verdana, Helvetica, sans-serif;
-                margin-top: -12px;
-                margin-left: 35px;
-                margin-right: 25px;
-                margin-bottom: 14.2px;
-            }
-
-            .slidervertical {
-                font: 9px/1.5 "Roboto Condensed", Verdana, Helvetica, sans-serif;
-                margin-top: 40px;
-                margin-left: 15px;
-                margin-right: 5px;
-                margin-bottom: 20px;
-                background: #3130308a;
-            }
-
-            /*the container must be positioned relative:*/
-            .custom-select {
-            display: block;
-            position: relative;
-            font-family: "Roboto Condensed";
-            font-size: 12px;
-            margin-left: 2px;
-            }
-
-            .custom-select select {
-            display: none; /*hide original SELECT element:*/
-            }
-
-            .select-selected {
-            background-color: rgb(145, 145, 145);
-            }
-
-            /*style the arrow inside the select element:*/
-            .select-selected:after {
-            position: absolute;
-            content: "";
-            top: 7px;
-            right: 3px;
-            width: 0;
-            height: 0;
-            border: 6px solid transparent;
-            border-color: #fff transparent transparent transparent;
-            }
-
-            /*point the arrow upwards when the select box is open (active):*/
-            .select-selected.select-arrow-active:after {
-            border-color: transparent transparent #fff transparent;
-            top: 1px;
-            }
-
-            /*style the items (options), including the selected item:*/
-            .select-items div,.select-selected {
-            color: #ffffff;
-            border: 1px solid transparent;
-            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-            cursor: pointer;
-            user-select: none;
-            }
-
-            /*style items (options):*/
-            .select-items {
-            position: absolute;
-            background-color: rgb(145, 145, 145);
-            top: 100%;
-            left: 0;
-            right: 0;
-            z-index: 99;
-            }
-
-            /*hide the items when the select box is closed:*/
-            .select-hide {
-            display: none;
-            }
-
-            .select-items div:hover, .same-as-selected {
-            background-color: rgba(0, 0, 0, 0.1);
-            }
-        </style>
+        <link rel="stylesheet" href="css/estilos.css">
+        
         <link rel="icon" type="image/png" href="images/logo.png">
         <title>Painel Sampa</title>
     </head>
@@ -254,28 +47,30 @@
         <script src="tree/jstree.search.js"></script>
         <script src="tree/jstree.types.js"></script>
         <script src="scroll/simple-scrollbar.min.js"></script>
+        <script src="js/dragndrop.js"></script>
         <script>
 
         var number = 0;
 
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:9
+            zoomControl:true, maxZoom:18, minZoom:9
         }).setView([-23.6738,-46.5216], 10.5);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="http://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx" title="Mapa Digital da Cidade de São Paulo">GeoSampa</a> &middot; <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/licenciamento" title="Secretaria de Urbanismo e Licenciamento">SMUL-GeoInfo</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        L.control.locate({locateOptions: {maxZoom: 18}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
         map.createPane('pane_OpenStreetMap_0');
+        map.getPane('pane_OpenStreetMap_0').id = "osm";
         map.getPane('pane_OpenStreetMap_0').style.zIndex = 400;
         var layer_OpenStreetMap_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             pane: 'pane_OpenStreetMap_0',
             opacity: 0.7,
             attribution: '',
-            minZoom: 6,
-            maxZoom: 28,
+            minZoom: 9,
+            maxZoom: 18,
             minNativeZoom: 0,
             maxNativeZoom: 19
         });
@@ -695,12 +490,8 @@
             text: 'Search',
             title: 'Testing'
         }).addTo(map);
-        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .className += ' fa fa-search';
-        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .title += 'Procurar por um lugar';
         var baseMaps = {};
-        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1,"OpenStreetMap": layer_OpenStreetMap_0, '<img src="legend/TerraIndigena_3.png" /> Terra Indígena': layer_TerraIndigena_3,'<img src="legend/Distritos_2.png"/> Distritos': layer_Distritos_2,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0,},{collapsed:false}).addTo(map);
+        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1, '<img src="legend/TerraIndigena_3.png" /> Terra Indígena': layer_TerraIndigena_3,'<img src="legend/Distritos_2.png"/> Distritos': layer_Distritos_2,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0,},{collapsed:false}).addTo(map);
         setBounds();
         
         var info = L.control();
@@ -740,47 +531,10 @@
         header.innerHTML = '<img src="images/HeaderPainel.png"; title="Painel"/>';
         header.style.backgroundColor = "#c3c3c3";
         header.style.display = "grid";
-        /*var col00 = document.createElement('div');
-        col00.className="col00";
-        col00.id = "titulo0";
-        col00.style.height = "98%";
-        col00.style.width = "17%";
-        col00.style.display = "inline-block";
-        col00.style.verticalAlign = "top";
-        col00.innerHTML = 'Explorador de Variáveis';
-        col00.style.fontWeight = "bold";
-        var col01 = document.createElement('div');
-        col01.className="col01";
-        col01.id = "titulo1";
-        col01.style.height = "100%";
-        col01.style.width = "53%";
-        col01.style.display = "inline-block";
-        col01.style.verticalAlign = "top";
-        col01.innerHTML = 'Mapa de Visualização de Variáveis';
-        col01.style.fontWeight = "bold";
-        var col02 = document.createElement('div');
-        col02.className="col02";
-        col02.id = "titulo2";
-        col02.style.height = "100%";
-        col02.style.width = "15%";
-        col02.style.display = "inline-block";
-        col02.style.verticalAlign = "top";
-        col02.innerHTML = 'Filtro de Variáveis';
-        col02.style.fontWeight = "bold";
-        var col03 = document.createElement('div');
-        col03.className="col03";
-        col03.id = "titulo3";
-        col03.style.height = "100%";
-        col03.style.width = "15%";
-        col03.style.display = "inline-block";
-        col03.style.verticalAlign = "top";
-        col03.innerHTML = 'Gráficos';
-        col03.style.fontWeight = "bold";*/
 
         var col0 = document.createElement('div');
         col0.className="col0";
         col0.id = "explorador";
-        col0.style.display = "inline-block";
         var col1 = document.createElement('div');
         col1.className="col1";
         col1.id = "mapWindow";
@@ -791,11 +545,43 @@
         var col2 = document.createElement('div');
         col2.className="col2";
         col2.id = "menu";
-        col2.style.display = "inline-block";
+
         var col3 = document.createElement('div');
-        col3.className="col3";
+        col3.className = "col3 fora_da_tela";
         col3.id = "grafico";
-        col3.style.display = "inline-block";
+        var col3header = document.createElement('div');
+        col3header.className = "col3h"
+        col3header.id = "graficoheader";
+        col3header.innerHTML = "Gráficos"
+        var botaox = document.createElement('div');
+        botaox.className = "grafico";
+        botaox.id = "fechar";
+        var col3body = document.createElement('div');
+        col3body.className = "col3b"
+        col3body.id = "graficobody";
+        var col3g1 = document.createElement('div');
+        col3g1.className = "col3g";
+        col3g1.id = "grafico1";
+        var col3g2 = document.createElement('div');
+        col3g2.className = "col3g";
+        col3g2.id = "grafico2";
+        var col3g3 = document.createElement('div');
+        col3g3.className = "col3g";
+        col3g3.id = "grafico3";
+
+        var bot1 = document.createElement('div');
+        bot1.className="botao_esquerda";
+        bot1.id = "botao_grafico";
+        var bot2 = document.createElement('div');
+        bot2.className="botao_esquerda clicked";
+        bot2.id = "botao_explorador";
+        var bot3 = document.createElement('div');
+        bot3.className="botao_esquerda clicked";
+        bot3.id = "botao_menu";
+        var bot4 = document.createElement('div');
+        bot4.className="botao_esquerda clicked";
+        bot4.id = "botao_osm";
+
         mapDiv.parentNode.insertBefore(row0, mapDiv);
         mapDiv.parentNode.insertBefore(row, mapDiv);
         /*document.getElementById("titulos").appendChild(col00);
@@ -807,7 +593,17 @@
         document.getElementById("all").appendChild(col1);
         document.getElementById("all").appendChild(col2);
         document.getElementById("all").appendChild(col3);
-    
+        document.getElementById("grafico").appendChild(col3header);
+        document.getElementById("graficoheader").appendChild(botaox);
+        document.getElementById("grafico").appendChild(col3body);
+        document.getElementById("graficobody").appendChild(col3g1);
+        document.getElementById("graficobody").appendChild(col3g2);
+        document.getElementById("graficobody").appendChild(col3g3);
+        document.getElementById("all").appendChild(bot1);
+        document.getElementById("all").appendChild(bot2);
+        document.getElementById("all").appendChild(bot3);
+        document.getElementById("all").appendChild(bot4);
+
         col1.appendChild(mapDiv);
         var Filters = {"Indice2": "real","Populacao": "real","Domicilios": "real","CadUni_Extrema_Pobreza": "real","CadUni_Pobreza": "real","Linha_Pobreza_60": "real","Raca": "real","Mulher_Responsavel": "real","CadUni_Imigrantes": "real","Deficientes": "real","CadUni_BPC_Idoso": "real","CadUni_BPC_Deficientes": "real","Ate_Ensino_Fundamental_18": "real","Analfabetos": "real","Sem_Saneamento_Basico": "real","Sem_Abastecimento_Agua": "real","Sem_Coleta_Lixo": "real","Populacao_Hab_Precaria": "real","Populacao_Corticos": "real","Populacao_de_Rua": "real","Baixo_Peso_Nascer": "real"};
         
@@ -821,19 +617,19 @@
             indicadorx1.innerHTML  = '<select><option value="Raca">Pretos, Pardos e Indígenas</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadorx1.className = 'custom-select';
             indicadorx1.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixox);
-            document.getElementById("grafico").appendChild(indicadorx1);
+            document.getElementById("grafico1").appendChild(eixox);
+            document.getElementById("grafico1").appendChild(indicadorx1);
         var indicadory1 = document.createElement('div');
             indicadory1.innerHTML  = '<select><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadory1.className = 'custom-select';
             indicadory1.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixoy);
-            document.getElementById("grafico").appendChild(indicadory1);
+            document.getElementById("grafico1").appendChild(eixoy);
+            document.getElementById("grafico1").appendChild(indicadory1);
 
         myDiv = document.createElement('div');
         myDiv.id = 'myDiv';
         myDiv.style.display = 'inline-block';
-        document.getElementById("grafico").appendChild(myDiv); 
+        document.getElementById("grafico1").appendChild(myDiv); 
         
         var eixox2 = document.createElement('div');
             eixox2.innerHTML = '<span>Gráfico 2 eixo x: </span>';
@@ -845,19 +641,19 @@
             indicadorx2.innerHTML  = '<select><option value="Raca">Pretos, Pardos e Indígenas</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadorx2.className = 'custom-select';
             indicadorx2.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixox2);
-            document.getElementById("grafico").appendChild(indicadorx2);
+            document.getElementById("grafico2").appendChild(eixox2);
+            document.getElementById("grafico2").appendChild(indicadorx2);
         var indicadory2 = document.createElement('div');
             indicadory2.innerHTML  = '<select><option value="CadUni_Pobreza">Pobreza</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadory2.className = 'custom-select';
             indicadory2.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixoy2);
-            document.getElementById("grafico").appendChild(indicadory2);
+            document.getElementById("grafico2").appendChild(eixoy2);
+            document.getElementById("grafico2").appendChild(indicadory2);
 
         myDiv2 = document.createElement('div');
         myDiv2.id = 'myDiv2';
         myDiv2.style.display = 'inline-block';
-        document.getElementById("grafico").appendChild(myDiv2); 
+        document.getElementById("grafico2").appendChild(myDiv2); 
         
         var eixox3 = document.createElement('div');
             eixox3.innerHTML = '<span>Histograma 1: </span>';
@@ -869,19 +665,19 @@
             indicadorx3.innerHTML  = '<select><option value="Raca">Pretos, Pardos e Indígenas</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadorx3.className = 'custom-select';
             indicadorx3.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixox3);
-            document.getElementById("grafico").appendChild(indicadorx3);
+            document.getElementById("grafico3").appendChild(eixox3);
+            document.getElementById("grafico3").appendChild(indicadorx3);
         var indicadory3 = document.createElement('div');
             indicadory3.innerHTML  = '<select><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="CadUni_Extrema_Pobreza">Extrema Pobreza</option><option value="CadUni_Pobreza">Pobreza</option><option value="Raca">Pretos, Pardos e Indígenas</option><option value="Mulher_Responsavel">Mulher Responsável</option><option value="CadUni_Imigrantes">Imigrantes</option><option value="Analfabetos">Analfabetos</option><option value="Populacao_Hab_Precaria">População em Hab Precária</option><option value="Populacao_Corticos">População em Cortiços</option><option value="Populacao_de_Rua">População de Rua</option><option value="Baixo_Peso_Nascer">Baixo Peso ao Nascer</option><option value="Linha_Pobreza_60">60 anos Linha de Pobreza</option><option value="Deficientes">Deficientes</option><option value="CadUni_BPC_Idoso">Idosos no BPC</option><option value="CadUni_BPC_Deficientes">Deficientes no BPC</option><option value="Ate_Ensino_Fundamental_18">Até Ensino Fundamental (>18)</option><option value="Sem_Saneamento_Basico">Sem Saneamento Básico</option><option value="Sem_Abastecimento_Agua">Sem Abastecimento de Água</option><option value="Sem_Coleta_Lixo">Sem Coleta de Lixo</option><option value="Populacao">População</option><option value="Domicilios">Domicílios</option></select>';
             indicadory3.className = 'custom-select';
             indicadory3.style.width = "180px";
-            document.getElementById("grafico").appendChild(eixoy3);
-            document.getElementById("grafico").appendChild(indicadory3);
+            document.getElementById("grafico3").appendChild(eixoy3);
+            document.getElementById("grafico3").appendChild(indicadory3);
        
         myDiv3 = document.createElement('div');
         myDiv3.id = 'myDiv3';
         myDiv3.style.display = 'inline-block';
-        document.getElementById("grafico").appendChild(myDiv3); 
+        document.getElementById("grafico3").appendChild(myDiv3); 
         
         var cont = 0;
         function filterFunc() {
@@ -3682,11 +3478,52 @@ $(function () {
             }
         }
         var localarvore = document.getElementById('arvore');
-        localarvore.addEventListener('click', adddatabar)
+        localarvore.addEventListener('click', adddatabar);
+
+        function foradatela() {
+            var classebotao = event.target.className;
+            if (classebotao == "botao_esquerda") {
+                var alvo = event.target.id;
+                var comeco = alvo.indexOf("_");
+                alvo = alvo.substring(comeco+1);
+                var coluna = document.getElementById(alvo);
+                coluna.classList.remove('fora_da_tela'); 
+                event.target.classList.add('clicked');
+            }
+            else {
+                var alvo = event.target.id;
+                if ( alvo != "fechar" ) {
+                    var comeco = alvo.indexOf("_");
+                    alvo = alvo.substring(comeco+1);
+                    var coluna = document.getElementById(alvo);
+                    coluna.classList.add('fora_da_tela');
+                    event.target.classList.remove('clicked');
+                }
+                else {
+                    alvo = event.target.className;
+                    var coluna = document.getElementById(alvo);
+                    coluna.classList.add('fora_da_tela');
+                    var be = document.getElementById("botao_"+alvo);
+                    be.classList.remove('clicked');
+                }
+                }
+        }
+        var botoesmenu = document.getElementById("botao_grafico");
+        botoesmenu.addEventListener('click', foradatela );
+        botoesmenu = document.getElementById("botao_explorador");
+        botoesmenu.addEventListener('click', foradatela );
+        botoesmenu = document.getElementById("botao_menu");
+        botoesmenu.addEventListener('click', foradatela );
+        botoesmenu = document.getElementById("fechar");
+        botoesmenu.addEventListener('click', foradatela );
+        botoesmenu = document.getElementById("botao_osm");
+        botoesmenu.addEventListener('click', foradatela );
+        
 
 SimpleScrollbar.initEl(document.getElementById("arvore"));
 SimpleScrollbar.initEl(document.getElementById("menu"));
-SimpleScrollbar.initEl(document.getElementById("grafico"));
+SimpleScrollbar.initEl(document.getElementById("graficobody"));
+dragElement(document.getElementById("grafico"));
 
         </script>
     </body>
