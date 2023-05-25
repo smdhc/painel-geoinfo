@@ -624,7 +624,7 @@ a.leaflet-control-zoom-out:active {
 #botao_osm.botao_esquerda:hover {
     background-image: url(../images/osm2.svg);
     background-repeat: no-repeat;
-    background-size: 25px;
+    background-size: 23px;
     background-position: center;
     background-color: #fffdda;
 }
@@ -657,7 +657,7 @@ a.leaflet-control-zoom-out:active {
     background-color: #ffffffdb;
     background-image: url(../images/osm.svg);
     background-repeat: no-repeat;
-    background-size: 23px;
+    background-size: 22px;
     background-position: center;
     cursor: pointer;
     box-shadow: 2px 2px 0px 1px rgba(67,67,67,0.65); 
@@ -675,7 +675,7 @@ a.leaflet-control-zoom-out:active {
     background-color: #e0ffda;
     background-image: url(../images/osm2.svg);
     background-repeat: no-repeat;
-    background-size: 25px;
+    background-size: 23px;
     background-position: center;
     cursor: pointer;
     box-shadow: 1px 1px 8px 1px rgba(96,253,63,0.83);
