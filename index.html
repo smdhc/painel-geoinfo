@@ -40,7 +40,7 @@
         <script src="data/Distritos_2.js"></script>
         <script src="data/TerraIndigena_3.js"></script>
         <script src="data/CidadeSolidria_0.js"></script>
-        <script src="data/limites_municipais.js"></script>
+        <!-- <script src="data/limites_municipais.js"></script> -->
         <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="tree/jstree.js"></script>
@@ -387,7 +387,7 @@
         function style_CidadeSolidria_0_0() {
             return {
                 pane: 'pane_CidadeSolidria_0',
-                radius: 2.2,
+                radius: 3.2,
                 opacity: 1,
                 color: 'rgba(50,87,128,0.0)',
                 dashArray: '',
@@ -438,33 +438,33 @@
         map.createPane('pane_limites_municipais');
         map.getPane('pane_limites_municipais').style.zIndex = 400;
         map.getPane('pane_limites_municipais').style['mix-blend-mode'] = 'normal';
-        var layer_limites_municipais = new L.geoJson(json_limites_municipais, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_limites_municipais',
-            layerName: 'layer_limites_municipais',
-            pane: 'pane_limites_municipais',
-            style: style_limites_municipais,
-        });
-        bounds_group.addLayer(layer_limites_municipais);
-        map.addLayer(layer_limites_municipais);
+        // var layer_limites_municipais = new L.geoJson(json_limites_municipais, {
+        //     attribution: '',
+        //     interactive: false,
+        //     dataVar: 'json_limites_municipais',
+        //     layerName: 'layer_limites_municipais',
+        //     pane: 'pane_limites_municipais',
+        //     style: style_limites_municipais,
+        // });
+        // bounds_group.addLayer(layer_limites_municipais);
+        // map.addLayer(layer_limites_municipais);
 
         function label() {
-        layer_limites_municipais.eachLayer(function(layer) {
-            if ( String((layer.feature.properties['municipio'])) != "SANTO ANDRÉ") {
-                layer.bindTooltip(String((layer.feature.properties['municipio'])), {
-                    direction: 'center',
-                    sticky: true,
-                    permanent: true }).openTooltip();
-            } else {
-                var poligono = L.polygon([[-23.659800, -46.520938], [-23.659800, -46.520938], [-23.659800, -46.52938], [-23.659800, -46.520938]], {color: 'transparent', interactive: false}).addTo(map);
-                poligono.bindTooltip(String((layer.feature.properties['municipio'])), {
-                direction: 'center',
-                sticky: true, 
-                permanent: true,
-                offset: [0,0] }).openTooltip();
-            }
-        });
+        // layer_limites_municipais.eachLayer(function(layer) {
+        //     if ( String((layer.feature.properties['municipio'])) != "SANTO ANDRÉ") {
+        //         layer.bindTooltip(String((layer.feature.properties['municipio'])), {
+        //             direction: 'center',
+        //             sticky: true,
+        //             permanent: true }).openTooltip();
+        //     } else {
+        //         var poligono = L.polygon([[-23.659800, -46.520938], [-23.659800, -46.520938], [-23.659800, -46.52938], [-23.659800, -46.520938]], {color: 'transparent', interactive: false}).addTo(map);
+        //         poligono.bindTooltip(String((layer.feature.properties['municipio'])), {
+        //         direction: 'center',
+        //         sticky: true, 
+        //         permanent: true,
+        //         offset: [0,0] }).openTooltip();
+        //     }
+        // });
         }
 
         var osmGeocoder = new L.Control.Geocoder({
@@ -3071,7 +3071,7 @@ $(function () {
                 var dado = parseFloat(layer.feature.properties[indicador[n].id]).toFixed(3);
                 eixo.push(parseFloat(dado).toFixed(3));
             });
-            console.log(eixo);
+            // console.log(eixo);
             return(eixo);
         }
 
@@ -3182,37 +3182,37 @@ $(function () {
         }
 
         function change_style_limites_municipais(){
-            layer_limites_municipais.eachLayer(function (layer) {
-                if (map.getZoom() >= 11.6 ) {
-                    layer.setStyle ({
-                        pane: 'pane_limites_municipais',
-                        opacity: 1,
-                        color: 'rgba(145,145,145,1.0)',
-                        dashArray: '',
-                        lineCap: 'butt',
-                        lineJoin: 'miter',
-                        weight: 0.8, 
-                        fill: true,
-                        fillOpacity: 1,
-                        fillColor: 'rgba(255,255,255,0.0)',
-                        interactive: false,
-                    });
-                } else {
-                    layer.setStyle ({
-                        pane: 'pane_limites_municipais',
-                        opacity: 1,
-                        color: 'rgba(145,145,145,1.0)',
-                        dashArray: '',
-                        lineCap: 'butt',
-                        lineJoin: 'miter',
-                        weight: 0.3, 
-                        fill: true,
-                        fillOpacity: 1,
-                        fillColor: 'rgba(255,255,255,0.0)',
-                        interactive: false,
-                    });
-                }
-            })
+            // layer_limites_municipais.eachLayer(function (layer) {
+            //     if (map.getZoom() >= 11.6 ) {
+            //         layer.setStyle ({
+            //             pane: 'pane_limites_municipais',
+            //             opacity: 1,
+            //             color: 'rgba(145,145,145,1.0)',
+            //             dashArray: '',
+            //             lineCap: 'butt',
+            //             lineJoin: 'miter',
+            //             weight: 0.8, 
+            //             fill: true,
+            //             fillOpacity: 1,
+            //             fillColor: 'rgba(255,255,255,0.0)',
+            //             interactive: false,
+            //         });
+            //     } else {
+            //         layer.setStyle ({
+            //             pane: 'pane_limites_municipais',
+            //             opacity: 1,
+            //             color: 'rgba(145,145,145,1.0)',
+            //             dashArray: '',
+            //             lineCap: 'butt',
+            //             lineJoin: 'miter',
+            //             weight: 0.3, 
+            //             fill: true,
+            //             fillOpacity: 1,
+            //             fillColor: 'rgba(255,255,255,0.0)',
+            //             interactive: false,
+            //         });
+            //     }
+            // })
         }
 
         function change_popup(){
@@ -3552,8 +3552,8 @@ $(function () {
             var listvector = document.getElementsByClassName('slider') || [];
             var listvectorids = [...listvector].map(element => element.id);
             var datavectortexts = [...datavector].map(element => element.textContent) || [];
-            console.log(datavectortexts);
-            console.log(listvectorids);
+            // console.log(datavectortexts);
+            // console.log(listvectorids);
             for (i = 0; i < datavectortexts.length; i++) {
                 if ( !(listvectorids.includes(datavectortexts[i])) ) {
                     var barcontainer = document.createElement('div');
@@ -3638,7 +3638,7 @@ $(function () {
                     be.classList.remove('clicked');
                 }
                 }
-            console.log(alvo)
+            // console.log(alvo)
         }
 
         var botoesmenu = document.getElementById("botao_grafico");
