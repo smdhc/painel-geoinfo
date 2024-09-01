@@ -40,6 +40,7 @@
         <script src="data/Distritos_2.js"></script>
         <script src="data/TerraIndigena_3.js"></script>
         <script src="data/CidadeSolidria_0.js"></script>
+        <script src="data/RCE.js"></script>
         <!-- <script src="data/limites_municipais.js"></script> -->
         <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -49,6 +50,7 @@
         <script src="tree/jstree.types.js"></script>
         <script src="scroll/simple-scrollbar.min.js"></script>
         <script src="js/dragndrop.js"></script>
+        <script src="scripts/rce.js"></script>
         <script>
 
         var number = 0;
@@ -387,9 +389,9 @@
         function style_CidadeSolidria_0_0() {
             return {
                 pane: 'pane_CidadeSolidria_0',
-                radius: 3.2,
+                radius: 3,
                 opacity: 1,
-                color: 'rgba(50,87,128,0.0)',
+                color: 'rgba(0,0,0,0.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
@@ -420,24 +422,70 @@
         });
         bounds_group.addLayer(layer_CidadeSolidria_0);
 
-        function style_limites_municipais() {
-            return {
-                pane: 'pane_limites_municipais',
-                opacity: 1,
-                color: 'rgba(145,145,145,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 0.5, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,0.0)',
-                interactive: false,
-            }
+        function pop_RCE(feature, layer) {
+        var popupContent = '<table>\
+                <tr>\
+                    <td colspan="2"><strong>NOME ORG</strong><br />' + (feature.properties['NOME ORG'] !== null ? autolinker.link(feature.properties['NOME ORG'].toLocaleString()) : '') + '</td>\
+                </tr>\
+            </table>';
+        layer.bindPopup(popupContent, {maxHeight: 400});
+    }
+
+    function style_RCE() {
+        return {
+            pane: 'pane_RCE',
+            radius: 5,
+            opacity: 1,
+            color: 'rgba(0,0,0,1.0)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: 2.0,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(102,255,171,1.0)',
+            interactive: true,
         }
-        map.createPane('pane_limites_municipais');
-        map.getPane('pane_limites_municipais').style.zIndex = 400;
-        map.getPane('pane_limites_municipais').style['mix-blend-mode'] = 'normal';
+    }
+    map.createPane('pane_RCE');
+    map.getPane('pane_RCE').style.zIndex = 404;
+    map.getPane('pane_RCE').style['mix-blend-mode'] = 'normal';
+    
+    var layer_RCE = new L.geoJson(json_RCE, {
+        attribution: '',
+        interactive: true,
+        dataVar: 'json_RCE',
+        layerName: 'layer_RCE',
+        pane: 'pane_RCE',
+        onEachFeature: pop_RCE,
+        pointToLayer: function (feature, latlng) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            return L.circleMarker(latlng, style_RCE(feature));
+        },
+    });
+    bounds_group.addLayer(layer_RCE);
+
+        // function style_limites_municipais() {
+        //     return {
+        //         pane: 'pane_limites_municipais',
+        //         opacity: 1,
+        //         color: 'rgba(145,145,145,1.0)',
+        //         dashArray: '',
+        //         lineCap: 'butt',
+        //         lineJoin: 'miter',
+        //         weight: 0.5, 
+        //         fill: true,
+        //         fillOpacity: 1,
+        //         fillColor: 'rgba(255,255,255,0.0)',
+        //         interactive: false,
+        //     }
+        // }
+        // map.createPane('pane_limites_municipais');
+        // map.getPane('pane_limites_municipais').style.zIndex = 400;
+        // map.getPane('pane_limites_municipais').style['mix-blend-mode'] = 'normal';
         // var layer_limites_municipais = new L.geoJson(json_limites_municipais, {
         //     attribution: '',
         //     interactive: false,
@@ -474,7 +522,7 @@
             title: 'Testing'
         }).addTo(map);
         var baseMaps = {};
-        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0,},{collapsed:false}).addTo(map);
+        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0, 'RCE': layer_RCE},{collapsed:false}).addTo(map);
         setBounds();
 
         map.on("zoomend", function(){
