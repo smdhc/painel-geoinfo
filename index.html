@@ -42,6 +42,7 @@
         <script src="data/CidadeSolidria_0.js"></script>
         <script src="data/RCC.js"></script>
         <script src="data/RCE.js"></script>
+        <script src="data/bom_prato_estadual.js"></script>
         <!-- <script src="data/limites_municipais.js"></script> -->
         <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -515,6 +516,52 @@
     });
     bounds_group.addLayer(layer_RCC);
 
+    function pop_bomPratoEstadual(feature, layer) {
+        var popupContent = '<table>\
+                <tr>\
+                    <td colspan="2"><strong>NOME ORG</strong><br />' + (feature.properties['NOME ORG'] !== null ? autolinker.link(feature.properties['NOME ORG'].toLocaleString()) : '') + '</td>\
+                </tr>\
+            </table>';
+        layer.bindPopup(popupContent, {maxHeight: 400});
+    }
+
+    function style_bomPratoEstadual() {
+        return {
+            pane: 'pane_bomPratoEstadual',
+            radius: 5,
+            opacity: 1,
+            color: 'rgba(0,0,0,1.0)',
+            dashArray: '',
+            lineCap: 'butt',
+            lineJoin: 'miter',
+            weight: 2.0,
+            fill: true,
+            fillOpacity: 1,
+            fillColor: 'rgba(102,237,255,1.0)',
+            interactive: true,
+        }
+    }
+    map.createPane('pane_bomPratoEstadual');
+    map.getPane('pane_bomPratoEstadual').style.zIndex = 404;
+    map.getPane('pane_bomPratoEstadual').style['mix-blend-mode'] = 'normal';
+    
+    var layer_bomPratoEstadual = new L.geoJson(json_bomPratoEstadual, {
+        attribution: '',
+        interactive: true,
+        dataVar: 'json_bomPratoEstadual',
+        layerName: 'layer_bomPratoEstadual',
+        pane: 'pane_bomPratoEstadual',
+        onEachFeature: pop_bomPratoEstadual,
+        pointToLayer: function (feature, latlng) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            return L.circleMarker(latlng, style_bomPratoEstadual(feature));
+        },
+    });
+    bounds_group.addLayer(layer_bomPratoEstadual);
+
         // function style_limites_municipais() {
         //     return {
         //         pane: 'pane_limites_municipais',
@@ -569,7 +616,7 @@
             title: 'Testing'
         }).addTo(map);
         var baseMaps = {};
-        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0, 'RCC': layer_RCC, 'RCE': layer_RCE},{collapsed:false}).addTo(map);
+        var indice = L.control.layers(baseMaps,{'Índice<br /><table><tr><td style="text-align: center;"><img src="legend/ndice_1_00501580.png" /></td><td>0,000 - 0,140</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_015802341.png" /></td><td>0,140 - 0,209</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_023402992.png" /></td><td>0,209 - 0,266</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_029903673.png" /></td><td>0,266 - 0,331</td></tr><tr><td style="text-align: center;"><img src="legend/ndice_1_036705554.png" /></td><td>0,331 - 1,000</td></tr></table>': layer_ndice_1,'<img src="legend/CidadeSolidria_0.png" /> Cidade Solidária': layer_CidadeSolidria_0, '<div class="rcc"></div> RCC': layer_RCC, '<div class="rce"></div> RCE': layer_RCE, '<div class="bom-prato-estadual"></div> Bom Prato Est.': layer_bomPratoEstadual},{collapsed:false}).addTo(map);
         setBounds();
 
         map.on("zoomend", function(){

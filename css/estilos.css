@@ -867,3 +867,27 @@ display: none;
 .select-items div:hover, .same-as-selected {
 background-color: rgba(0, 0, 0, 0.1);
 }
+
+.rcc {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,180,102,1.0);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.rce {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(102,255,171,1.0);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bom-prato-estadual {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(102, 237, 255, 1);
+    border-radius: 50%;
+    display: inline-block;
+}

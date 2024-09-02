@@ -1,0 +1,31 @@
+var json_bomPratoEstadual = {
+    "type": "FeatureCollection",
+    "name": "bom_prato_estadual",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+    { "type": "Feature", "properties": { "ID": 1, "NOME ORG": "25 DE MARÇO", "Latitude": -23.5480155, "Longitude": -46.6306434 }, "geometry": { "type": "Point", "coordinates": [ -46.6306434, -23.5480155 ] } },
+    { "type": "Feature", "properties": { "ID": 2, "NOME ORG": "BRÁS", "Latitude": -23.5408313, "Longitude": -46.6134372 }, "geometry": { "type": "Point", "coordinates": [ -46.6134372, -23.5408313 ] } },
+    { "type": "Feature", "properties": { "ID": 3, "NOME ORG": "BRASILÂNDIA", "Latitude": -23.4723507, "Longitude": -46.6914128 }, "geometry": { "type": "Point", "coordinates": [ -46.6914128, -23.4723507 ] } },
+    { "type": "Feature", "properties": { "ID": 4, "NOME ORG": "CAMPO LIMPO", "Latitude": -23.6597414, "Longitude": -46.7734715 }, "geometry": { "type": "Point", "coordinates": [ -46.7734715, -23.6597414 ] } },
+    { "type": "Feature", "properties": { "ID": 5, "NOME ORG": "CAPÃO REDONDO", "Latitude": -23.6710551, "Longitude": -46.7700716 }, "geometry": { "type": "Point", "coordinates": [ -46.7700716, -23.6710551 ] } },
+    { "type": "Feature", "properties": { "ID": 6, "NOME ORG": "CIDADE ADEMAR", "Latitude": -23.6815486, "Longitude": -46.6527594 }, "geometry": { "type": "Point", "coordinates": [ -46.6527594, -23.6815486 ] } },
+    { "type": "Feature", "properties": { "ID": 7, "NOME ORG": "GRAJAÚ/CIDADE DUTRA", "Latitude": -23.7115996, "Longitude": -46.6984727 }, "geometry": { "type": "Point", "coordinates": [ -46.6984727, -23.7115996 ] } },
+    { "type": "Feature", "properties": { "ID": 8, "NOME ORG": "GUAIANASES", "Latitude": -23.5430032, "Longitude": -46.4122863 }, "geometry": { "type": "Point", "coordinates": [ -46.4122863, -23.5430032 ] } },
+    { "type": "Feature", "properties": { "ID": 9, "NOME ORG": "HELIÓPOLIS", "Latitude": -23.6199987, "Longitude": -46.5923454 }, "geometry": { "type": "Point", "coordinates": [ -46.5923454, -23.6199987 ] } },
+    { "type": "Feature", "properties": { "ID": 10, "NOME ORG": "ITAIM PAULISTA", "Latitude": -23.4995174, "Longitude": -46.4003961 }, "geometry": { "type": "Point", "coordinates": [ -46.4003961, -23.4995174 ] } },
+    { "type": "Feature", "properties": { "ID": 11, "NOME ORG": "ITAQUERA", "Latitude": -23.5379954, "Longitude": -46.4526044 }, "geometry": { "type": "Point", "coordinates": [ -46.4526044, -23.5379954 ] } },
+    { "type": "Feature", "properties": { "ID": 12, "NOME ORG": "LAPA", "Latitude": -23.5225968, "Longitude": -46.7062846 }, "geometry": { "type": "Point", "coordinates": [ -46.7062846, -23.5225968 ] } },
+    { "type": "Feature", "properties": { "ID": 13, "NOME ORG": "LIMÃO", "Latitude": -23.5067889, "Longitude": -46.6736633 }, "geometry": { "type": "Point", "coordinates": [ -46.6736633, -23.5067889 ] } },
+    { "type": "Feature", "properties": { "ID": 14, "NOME ORG": "M'BOI MIRIM", "Latitude": -23.6723023, "Longitude": -46.7427425 }, "geometry": { "type": "Point", "coordinates": [ -46.7427425, -23.6723023 ] } },
+    { "type": "Feature", "properties": { "ID": 15, "NOME ORG": "PARAISÓPOLIS", "Latitude": -23.6137641, "Longitude": -46.7242333 }, "geometry": { "type": "Point", "coordinates": [ -46.7242333, -23.6137641 ] } },
+    { "type": "Feature", "properties": { "ID": 16, "NOME ORG": "PARELHEIROS", "Latitude": -23.8282991, "Longitude": -46.7300821 }, "geometry": { "type": "Point", "coordinates": [ -46.7300821, -23.8282991 ] } },
+    { "type": "Feature", "properties": { "ID": 17, "NOME ORG": "PERUS", "Latitude": -23.4068717, "Longitude": -46.7545558 }, "geometry": { "type": "Point", "coordinates": [ -46.7545558, -23.4068717 ] } },
+    { "type": "Feature", "properties": { "ID": 18, "NOME ORG": "REFEITÓRIO MAUÁ", "Latitude": -23.5352647, "Longitude": -46.6395025 }, "geometry": { "type": "Point", "coordinates": [ -46.6395025, -23.5352647 ] } },
+    { "type": "Feature", "properties": { "ID": 19, "NOME ORG": "SANTANA", "Latitude": -23.5064071, "Longitude": -46.6253476 }, "geometry": { "type": "Point", "coordinates": [ -46.6253476, -23.5064071 ] } },
+    { "type": "Feature", "properties": { "ID": 20, "NOME ORG": "SANTO AMARO", "Latitude": -23.6518178, "Longitude": -46.7122527 }, "geometry": { "type": "Point", "coordinates": [ -46.7122527, -23.6518178 ] } },
+    { "type": "Feature", "properties": { "ID": 21, "NOME ORG": "SÃO MATEUS", "Latitude": -23.604409, "Longitude": -46.4812056 }, "geometry": { "type": "Point", "coordinates": [ -46.4812056, -23.604409 ] } },
+    { "type": "Feature", "properties": { "ID": 22, "NOME ORG": "SÃO MIGUEL PAULISTA", "Latitude": -23.4918788, "Longitude": -46.4388242 }, "geometry": { "type": "Point", "coordinates": [ -46.4388242, -23.4918788 ] } },
+    { "type": "Feature", "properties": { "ID": 23, "NOME ORG": "TUCURUVI", "Latitude": -23.4788591, "Longitude": -46.6114067 }, "geometry": { "type": "Point", "coordinates": [ -46.6114067, -23.4788591 ] } },
+    { "type": "Feature", "properties": { "ID": 24, "NOME ORG": "VILA NOVA CACHOEIRINHA", "Latitude": -23.4733728, "Longitude": -46.6710159 }, "geometry": { "type": "Point", "coordinates": [ -46.6710159, -23.4733728 ] } }
+    ]
+    };
