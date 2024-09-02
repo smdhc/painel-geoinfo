@@ -1,0 +1,11 @@
+var json_armazemSolidario = {
+    "type": "FeatureCollection",
+    "name": "armazem_solidario",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+    { "type": "Feature", "properties": { "ID": 1, "NOME ORG": "Unidade São Miguel Paulista", "Latitude": -23.4936896, "Longitude": -46.4397519 }, "geometry": { "type": "Point", "coordinates": [ -46.4397519, -23.4936896 ] } },
+    { "type": "Feature", "properties": { "ID": 2, "NOME ORG": "Unidade City Jaraguá", "Latitude": -23.4352715, "Longitude": -46.7342362 }, "geometry": { "type": "Point", "coordinates": [ -46.7342362, -23.4352715 ] } },
+    { "type": "Feature", "properties": { "ID": 3, "NOME ORG": "Unidade Jaraguá", "Latitude": -23.4892141, "Longitude": -46.7596601 }, "geometry": { "type": "Point", "coordinates": [ -46.7596601, -23.4892141 ] } },
+    { "type": "Feature", "properties": { "ID": 4, "NOME ORG": "Unidade Estrada do Sabão", "Latitude": -23.4753927, "Longitude": -46.698546 }, "geometry": { "type": "Point", "coordinates": [ -46.698546, -23.4753927 ] } }
+    ]
+    };    
